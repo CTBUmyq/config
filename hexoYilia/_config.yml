@@ -1,0 +1,145 @@
+# Hexo Configuration  Hexo配置文件
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site 网站信息
+title: 牟一全的博客
+subtitle: 记录学习的技能和遇到的问题
+description: 做自己爱做的事，爱自己再做的事
+author: Yiquan Mou
+language: zh-CN
+timezone: Asia/Shanghai
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://ctbumyq.github.io/
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+#资源文件夹，放在里面的文件会上传到githup中
+source_dir: source
+#公共文件夹，存放生成的静态文件
+public_dir: public
+#标签文件夹，默认是tags。实际存放在source/tags中。
+tag_dir: tags
+#档案文件夹，默认是archives。
+archive_dir: archives
+#分类文件夹，默认是categories。实际存放在source/categories中。
+category_dir: categories
+#代码文件夹，默认是downloads/code
+code_dir: downloads/code
+#国际化文件夹，默认跟language相同
+i18n_dir: :lang
+#不需要渲染的文件夹或文件夹,放在[]中
+# 这两个文件是百度和google的站长验证文件，不能渲染，否则会改变内容，不能验证过
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
+
+# Category & Tag
+default_category: categorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# 分页配置
+# ---------------下面选项需要对应插件的支持---------------
+# npm install hexo-generator-index --save
+# npm install hexo-generator-archive --save
+# npm install hexo-generator-category --save
+# npm install hexo-generator-tag --save
+## Set per_page to 0 to disable pagination
+#每页显示的文章量 
+#per_page: 20
+#首页的分页设置
+index_generator:
+  per_page: 5
+#归档页的分页设置
+archive_generator:
+  per_page: 30
+  yearly: true
+  monthly: true
+#标签页的分页设置
+tag_generator:
+  per_page: 20
+
+#分页路径，在public中可以看到
+pagination_dir: page
+
+
+# Extensions 拓展插件配置
+## Plugins: https://hexo.io/plugins/
+plugins: 
+baidusitemap: 
+  path: baidusitemap.xml
+
+
+# 配置RSS
+feed: 
+  #feed 类型 (atom/rss2)
+  type: atom   
+  #rss 路径
+  path: atom.xml  
+  #在 rss 中最多生成的文章数(0显示所有)
+  limit: 0
+
+# 自定义站点内容搜索
+# 需要先安装插件：
+# npm install hexo-generator-search --save
+search:
+  path: search.xml
+  # 如只想索引文章，可设置为post
+  field: all 
+
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: true
+      comments: true
+      link: false
+      permalink: false
+      excerpt: false
+      categories: true
+      tags: true
+  
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: yilia
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy: 
+  type: git
+  repo: git@github.com:CTBUmyq/CTBUmyq.github.io.git
+  branch: master
